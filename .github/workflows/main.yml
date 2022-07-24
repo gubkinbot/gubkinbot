@@ -24,4 +24,4 @@ jobs:
           script: |
             cd /home/git/gubkinbot
             git pull
-            pm2 reload all
+            pm2 reload gubkinbot
