@@ -7,8 +7,6 @@ config = yaml.safe_load(open(config_path))
 
 bot = telebot.TeleBot(config['TOKEN'])
 
-ids = [2528316, -1001770890678, 263965948, 95700052, 543148778, 1221981431, 245304345, 57180126, 713287828]
-
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
 	bot.reply_to(message, "Привет!")
