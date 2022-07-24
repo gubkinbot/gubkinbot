@@ -11,7 +11,7 @@ bot = telebot.TeleBot(config['TOKEN'])
 def gen_markup():
     markup = InlineKeyboardMarkup()
     markup.row_width = 1
-    markup.add(InlineKeyboardButton('Done', callback_data='DONE'))
+    markup.add(InlineKeyboardButton('Done 👌', callback_data='Done!'))
     return markup
 
 @bot.callback_query_handler(func=lambda call: True)
