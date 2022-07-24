@@ -16,5 +16,4 @@ def echo_all(message):
     if message.text.find('-') > 0:
         bot.reply_to(message, 'Моя твоя не понимать...', parse_mode='HTML')
         
-
 bot.infinity_polling()
