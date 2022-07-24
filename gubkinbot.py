@@ -17,7 +17,7 @@ def gen_markup():
 @bot.callback_query_handler(func=lambda call: True)
 def callback_query(call: telebot.types.CallbackQuery):
 	bot.answer_callback_query(call.id, call.data)
-	bot.edit_message_reply_markup(chat_id=call.message.chat.id, reply_markup=gen_markup())
+	bot.edit_message_reply_markup(chat_id=call.message.chat.id, message_id=call.message.message_id, reply_markup=gen_markup())
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
