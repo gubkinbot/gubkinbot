@@ -22,6 +22,6 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: 22
           script: |
-            cd /home/git/butenbrodbot
+            cd /home/git/gubkinbot
             git pull
             pm2 reload all
