@@ -10,7 +10,7 @@ bot = telebot.TeleBot(config['TOKEN'])
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_query(call: telebot.types.CallbackQuery):
-	bot.answer_callback_query(call.id, "Готово!")
+	bot.answer_callback_query(call.id, call.data)
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
