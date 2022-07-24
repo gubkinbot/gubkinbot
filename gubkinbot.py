@@ -7,6 +7,11 @@ config = yaml.safe_load(open(config_path))
 
 bot = telebot.TeleBot(config['TOKEN'])
 
+
+@bot.callback_query_handler(func=lambda call: True)
+def callback_query(call: telebot.types.CallbackQuery):
+	bot.answer_callback_query(call.id, "Готово!")
+
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
 	bot.reply_to(message, "Привет!")
