@@ -16,7 +16,10 @@ def gen_markup():
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_query(call: telebot.types.CallbackQuery):
-	bot.answer_callback_query(call.id, call.data)
+	if call.data == 'error':
+		bot.answer_callback_query(call.id, 'Что-нибудь придумаем')
+	else:
+		bot.answer_callback_query(call.id, call.data)
 	bot.edit_message_reply_markup(chat_id=call.message.chat.id, message_id=call.message.message_id, reply_markup=gen_markup())
 
 @bot.message_handler(commands=['start', 'help'])
