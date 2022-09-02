@@ -28,6 +28,6 @@ def send_welcome(message):
 
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
-	bot.reply_to(message, 'Не знаю, что и сказать...', parse_mode='HTML')
+	bot.reply_to(message, 'К такому меня жизнь не готовила...', parse_mode='HTML')
         
 bot.infinity_polling()
