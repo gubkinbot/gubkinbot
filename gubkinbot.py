@@ -28,6 +28,9 @@ def send_welcome(message):
 
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
-	bot.reply_to(message, 'К такому меня жизнь не готовила...', parse_mode='HTML')
+	if message.text == 'Парфирий':
+		bot.reply_to(message, 'Не Парфирий, а Порфирий...', parse_mode='HTML')
+	else:
+		bot.reply_to(message, 'Я с тобой не разговариваю', parse_mode='HTML')
         
 bot.infinity_polling()
