@@ -19,7 +19,7 @@ def callback_query(call: telebot.types.CallbackQuery):
 	if call.data == 'error':
 		bot.answer_callback_query(call.id, 'Что-нибудь придумаем')
 	else:
-		bot.answer_callback_query(call.id, call.data)
+		bot.answer_callback_query(call.id, 'Функция в разработке')
 	bot.edit_message_reply_markup(chat_id=call.message.chat.id, message_id=call.message.message_id, reply_markup=gen_markup())
 
 @bot.message_handler(commands=['start', 'help'])
